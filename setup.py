@@ -8,11 +8,13 @@ with open("README.md", "r", encoding="utf-8") as fh:
 with open('requirements.txt') as f:
     required = f.read().splitlines()
 
+from _version import __version__ as version
+
     
 setuptools.setup(
     name="co-connect-pseudonymise", 
     author="CO-CONNECT",
-    version='0.1',
+    version=version,
     author_email="CO-CONNECT@dundee.ac.uk",
     description="CommandLine Interface for pseudonymising data.",
     long_description=long_description,
