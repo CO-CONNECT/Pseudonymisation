@@ -27,7 +27,7 @@ def csv(input,output_folder,chunksize,salt,columns):
     while True:
         for col in columns:
             data[col] =  data[col].apply(
-                lambda x: hashlib.sha256(x.encode("UTF-8")).hexdigest()
+                lambda x: hashlib.sha256((x+salt).encode("UTF-8")).hexdigest()
             )
             logger.debug(data[col])
         
